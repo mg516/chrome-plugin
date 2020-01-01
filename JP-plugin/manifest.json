@@ -1,0 +1,30 @@
+{
+  "name": "JP-plugin",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "金鹏公司使用插件",
+  "author": "MG",
+  "icons": {
+    "128": "logo.png",
+    "128": "logo.png",
+    "128": "logo.png",
+    "128": "logo.png"
+  },
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_title": "Todo List",
+    "default_popup": "./popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["./content/content.js"],
+      "remark": "注入标签页内的脚本"
+    }
+  ],
+  "permissions": ["*://*/*","tabs"],
+  "externally_connectable": {
+    "matches": ["*://*.example.com/*"],
+    "remark": "从web页面发送消息"
+  }
+}
